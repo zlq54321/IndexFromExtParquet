@@ -1,0 +1,68 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Debug run_update.py (case_quality)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/root/IndexFromExtParquet/run_update.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--root",
+                "/root/wsl/rag_case_quality"
+            ],
+            "cwd": "/root/IndexFromExtParquet",
+            "env": {
+                "PYTHONPATH": "/root/IndexFromExtParquet"
+            },
+            "justMyCode": false,
+            "python": "/root/IndexFromExtParquet/.venv/bin/python"
+        },
+        {
+            "name": "Python: Debug query_openai_api (local search, case_quality)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/root/IndexFromExtParquet/query_openai_api.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--root",
+                "/root/wsl/rag_case_quality",
+                "--method",
+                "local",
+                "--port",
+                "8001"
+            ],
+            "cwd": "/root/IndexFromExtParquet",
+            "env": {
+                "PYTHONPATH": "/root/IndexFromExtParquet"
+            },
+            "justMyCode": false,
+            "python": "/root/IndexFromExtParquet/.venv/bin/python"
+        },
+        {
+            "name": "Python: Debug run_update.py (custom root)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/root/IndexFromExtParquet/run_update.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--root",
+                "${input:projectRoot}"
+            ],
+            "cwd": "/root/IndexFromExtParquet",
+            "env": {
+                "PYTHONPATH": "/root/IndexFromExtParquet"
+            },
+            "justMyCode": false,
+            "python": "/root/IndexFromExtParquet/.venv/bin/python"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "projectRoot",
+            "type": "promptString",
+            "description": "Enter project root directory (absolute path)",
+            "default": "/root/IndexFromExtParquet/case_quality"
+        }
+    ]
+}
